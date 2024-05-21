@@ -5,7 +5,7 @@ import helmet from "helmet";
 import ServerlessHttp from "serverless-http";
 import routes from "./routes.js";
 
-const { PORT } = process.env;
+// const { PORT } = process.env;
 
 function initApp() {
   const app = express();
@@ -23,9 +23,9 @@ function initApp() {
 function start() {
   const app = initApp();
 
-  app.listen(PORT, () => {
-    console.log(`Server listening on port ${PORT}`);
-  });
+  // app.listen(PORT, () => {
+  //   console.log(`Server listening on port ${PORT}`);
+  // });
 
   return ServerlessHttp(app);
 }
