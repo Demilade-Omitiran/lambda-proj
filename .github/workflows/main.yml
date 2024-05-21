@@ -22,7 +22,7 @@ jobs:
           CI: true
         run: |
           npm ci
-          zip -r publish.zip ./*
+          zip -r publish.zip .
       - name: Deploy to AWS Lambda
         run: |
           aws lambda update-function-code --function-name sessions-proj-lambda --zip-file fileb://publish.zip --region us-east-1
