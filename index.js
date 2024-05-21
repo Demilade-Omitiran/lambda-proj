@@ -30,4 +30,4 @@ function start() {
   return ServerlessHttp(app);
 }
 
-export default start();
+export const handler = start();
