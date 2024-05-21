@@ -15,7 +15,7 @@ function initApp() {
   app.use(json());
   app.use(urlencoded({ extended: false }));
 
-  app.use("/api/v1/", routes);
+  app.use("/", routes);
 
   return app;
 }
