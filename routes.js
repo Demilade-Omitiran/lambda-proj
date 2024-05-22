@@ -15,6 +15,8 @@ router.get("/health-check", (req, res) => res.status(200).json({
 
 router.all("*", (req, res) => res.status(404).json({
   error: "Path not found",
+  originalUrl: req.originalUrl,
+  path: req.path
 }));
 
 router.use((error, req, res, next) => {
