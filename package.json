@@ -12,6 +12,7 @@
   "author": "Demilade-Omitiran",
   "license": "ISC",
   "dependencies": {
+    "axios": "^1.7.2",
     "cors": "^2.8.5",
     "dotenv": "^16.4.5",
     "express": "^4.19.2",
@@ -20,7 +21,8 @@
     "pg-hstore": "^2.3.4",
     "pm2": "^5.3.1",
     "sequelize": "^6.37.3",
-    "serverless-http": "^3.2.0"
+    "serverless-http": "^3.2.0",
+    "uuid": "^9.0.1"
   },
   "devDependencies": {
     "nodemon": "^3.1.0",
