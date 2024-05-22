@@ -1,6 +1,9 @@
-import "dotenv/config";
+require('dotenv/config');
 
-export default {
+console.log("AAA");
+console.log(process.env.DB_USERNAME);
+
+module.exports = {
   "development": {
     "username": process.env.DB_USERNAME,
     "password": process.env.DB_PASSWORD,
