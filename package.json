@@ -16,6 +16,7 @@
   "author": "Demilade-Omitiran",
   "license": "ISC",
   "dependencies": {
+    "@aws-sdk/client-s3": "^3.582.0",
     "axios": "^1.7.2",
     "cors": "^2.8.5",
     "dotenv": "^16.4.5",
