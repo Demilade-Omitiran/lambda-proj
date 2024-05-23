@@ -23,6 +23,9 @@ jobs:
         run: |
           npm ci
           zip -r publish.zip .
+      
+      - name: Run Migrations
+        run: npm run migrate
           
       - name: Deploy to AWS Lambda
         run: |
