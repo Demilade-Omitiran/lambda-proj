@@ -1,6 +1,6 @@
 import Joi from "joi";
 import { throwApiError } from "../helpers/throw_api_error.js";
-import ImagesService from "../services/images.js";
+import ImagesService from "../services/images/index.js";
 
 const saveImageSchema = Joi.object({
   url: Joi.string().uri().required(),
