@@ -1,9 +1,14 @@
 import fs from "fs";
+import { fileURLToPath } from 'url';
+import path from "path";
 import { promisify } from 'util';
 import { PutObjectCommand, S3Client } from "@aws-sdk/client-s3";
 import { throwApiError } from "../../helpers/throw_api_error.js";
 
 const { AWS_S3_BUCKET, AWS_ACCESS_KEY, AWS_SECRET_ACCESS_KEY, AWS_REGION } = process.env;
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 async function saveImageToS3Bucket(fileName) {
   try {
@@ -19,7 +24,7 @@ async function saveImageToS3Bucket(fileName) {
     const command = new PutObjectCommand({
       Bucket: AWS_S3_BUCKET,
       Key: fileName,
-      Body: await readFileAsync(`./temp/${fileName}`),
+      Body: await readFileAsync(path.join(__dirname, `../../temp/${fileName}`)),
     });
 
     const response = await client.send(command);

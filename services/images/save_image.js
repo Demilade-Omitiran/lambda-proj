@@ -15,7 +15,7 @@ async function saveImage(name, url) {
     return data;
   } finally {
     if (fileName) {
-      deleteImageFromTemp(fileName);
+      await deleteImageFromTemp(fileName);
     }
   }
 }
