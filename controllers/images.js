@@ -24,12 +24,32 @@ const ImagesController = {
 
       const { name, url } = req.body;
 
-      const imageData = await ImagesService.saveImage(name, url);
+      const imageData = await ImagesService.saveImage(name.toLowerCase(), url);
 
       return res.status(200).json({
         message: "Image saved successfully",
         data: imageData,
         status: "success"
+      });
+    } catch (error) {
+      next(error);
+    }
+  },
+
+  async getImageByName(req, res, next) {
+    try {
+      const { name } = req.params;
+
+      const image = await ImagesService.getImageFromDatabase(name.toLowerCase());
+
+      if (!image) {
+        throwApiError(404, "Image not found");
+      }
+
+      return res.status(200).json({
+        status: "success",
+        message: "Image retrieved successfully",
+        data: image
       });
     } catch (error) {
       next(error);
