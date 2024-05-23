@@ -1,6 +1,8 @@
 # LAMBDA PROJECT
 This is an AWS lambda project, built in ExpressJS (Node) and deployed using GitHub Actions.
 
+**API URL**: https://7daa9pngc9.execute-api.us-east-1.amazonaws.com/default/
+
 ### ENDPOINTS
 - **GET /health-check**
 Health-Check endpoint.
