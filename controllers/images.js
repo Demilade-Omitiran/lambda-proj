@@ -43,7 +43,7 @@ const ImagesController = {
       const image = await ImagesService.getImageFromDatabase(name.toLowerCase());
 
       if (!image) {
-        throwApiError(404, "Image not found");
+        throwApiError(404, "Image not found", { status: "fail" });
       }
 
       return res.status(200).json({
