@@ -13,4 +13,4 @@ Fetch image by `name`.
 
 - **POST /images**
 Params: `name`, `url`
-This endpoint downloads an image from the `url`, uploads it to AWS S3, saves the `name` and S3 url, and then returns data on the saved image. If `name` already exists in the database, then the S3 image is overridden.
+This endpoint downloads an image from the `url`, uploads it to AWS S3, saves the `name` and S3 url, and then returns data on the saved image. If `name` already exists in the database, then the S3 image is overridden. The S3 urls have public-read access.
