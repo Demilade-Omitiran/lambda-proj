@@ -1,5 +1,5 @@
 # LAMBDA PROJECT
-This is an AWS lambda project, built in ExpressJS (Node) and deployed using GitHub Actions.
+Tools: ExpressJS (Node), Sequelize (for migrations and database queries), GitHub Actions, AWS Lambda
 
 **API URL**: https://7daa9pngc9.execute-api.us-east-1.amazonaws.com/default/
 
