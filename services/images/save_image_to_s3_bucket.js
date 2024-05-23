@@ -24,7 +24,7 @@ async function saveImageToS3Bucket(fileName) {
     const command = new PutObjectCommand({
       Bucket: AWS_S3_BUCKET,
       Key: fileName,
-      Body: await readFileAsync(path.join(__dirname, `../../temp/${fileName}`)),
+      Body: await readFileAsync(path.join(__dirname, `../../tmp/${fileName}`)),
     });
 
     const response = await client.send(command);
