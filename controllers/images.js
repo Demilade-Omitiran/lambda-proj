@@ -54,6 +54,20 @@ const ImagesController = {
     } catch (error) {
       next(error);
     }
+  },
+
+  async getAllImages(req, res, next) {
+    try {
+      const images = await ImagesService.getAllImages();
+
+      return res.status(200).json({
+        status: "success",
+        message: "Images retrieved successfully",
+        data: images
+      });
+    } catch (error) {
+      next(error);
+    }
   }
 };
 
