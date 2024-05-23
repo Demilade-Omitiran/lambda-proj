@@ -1,6 +1,8 @@
 # LAMBDA PROJECT
 Tools: ExpressJS (Node), Sequelize (for migrations and database queries), GitHub Actions, AWS Lambda
 
+JSend was used for the response body formats.
+
 **API URL**: https://7daa9pngc9.execute-api.us-east-1.amazonaws.com/default/
 
 ## ENDPOINTS
