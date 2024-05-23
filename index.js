@@ -3,7 +3,7 @@ import "dotenv/config";
 import cors from "cors";
 import helmet from "helmet";
 import ServerlessHttp from "serverless-http";
-import routes from "./routes.js";
+import routes from "./routes/index.js";
 
 const { PORT, ENVIRONMENT } = process.env;
 
