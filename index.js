@@ -26,7 +26,7 @@ function start() {
   const app = initApp();
 
   if (ENVIRONMENT !== "lambda") {
-    app.listen(PORT, () => {
+    return app.listen(PORT, () => {
       console.log(`Server listening on port ${PORT}`);
     });
   }
