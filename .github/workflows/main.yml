@@ -51,6 +51,11 @@ jobs:
 
       - name: Run Tests
         run: npm run test
+        env:
+          TEST_DB_USERNAME: postgres
+          TEST_DB_NAME: postgres
+          TEST_DB_HOST: localhost
+          TEST_DB_PASSWORD: postgres
           
       - name: Deploy to AWS Lambda
         run: |
