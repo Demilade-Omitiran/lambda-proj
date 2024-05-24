@@ -1,5 +1,5 @@
 # LAMBDA PROJECT
-Tools: ExpressJS (Node), Sequelize (for migrations and database queries), GitHub Actions, AWS Lambda
+Tools: ExpressJS (Node), Sequelize (for migrations and database queries), GitHub Actions, AWS Lambda, AWS RDS.
 
 JSend was used for the response body formats.
 
