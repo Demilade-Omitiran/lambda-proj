@@ -8,6 +8,11 @@ on:
 jobs:
   deploy_lambda:
     runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: postgres
+        ports:
+          - 5432:5432
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -28,7 +33,12 @@ jobs:
         run: DB_USERNAME=${{ secrets.DB_USERNAME }} DB_NAME=${{ secrets.DB_NAME }} DB_HOST=${{ secrets.DB_HOST }} DB_PASSWORD=${{ secrets.DB_PASSWORD }} npm run migrate
 
       - name: Run Migrations On Test DB
-        run: TEST_DB_USERNAME=${{ secrets.TEST_DB_USERNAME }} TEST_DB_NAME=${{ secrets.TEST_DB_NAME }} TEST_DB_HOST=${{ secrets.TEST_DB_HOST }} TEST_DB_PASSWORD=${{ secrets.TEST_DB_PASSWORD }} npm run migrate:test
+        run: npm run migrate:test
+        env:
+          TEST_DB_USERNAME: postgres
+          TEST_DB_NAME: postgres
+          TEST_DB_HOST: postgres
+          TEST_DB_PASSWORD: postgres
 
       - name: Run Tests
         run: npm run test
