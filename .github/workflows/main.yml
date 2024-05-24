@@ -33,7 +33,7 @@ jobs:
         run: DB_USERNAME=${{ secrets.DB_USERNAME }} DB_NAME=${{ secrets.DB_NAME }} DB_HOST=${{ secrets.DB_HOST }} DB_PASSWORD=${{ secrets.DB_PASSWORD }} npm run migrate
 
       - name: Run Migrations On Test DB
-        run: npm run migrate:test
+        run: TEST_DB_USERNAME=$TEST_DB_USERNAME TEST_DB_NAME=$TEST_DB_NAME TEST_DB_HOST=$TEST_DB_HOST TEST_DB_PASSWORD=$TEST_DB_PASSWORD npm run migrate:test
         env:
           TEST_DB_USERNAME: postgres
           TEST_DB_NAME: postgres
