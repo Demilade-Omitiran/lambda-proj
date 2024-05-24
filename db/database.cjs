@@ -14,6 +14,11 @@ module.exports = {
     "password": process.env.TEST_DB_PASSWORD,
     "database": process.env.TEST_DB_NAME,
     "host": process.env.TEST_DB_HOST,
+    "port": process.env.TEST_DB_PORT || 5432,
+    "ssl": {
+      "require": true,
+      "rejectUnauthorized": false
+    },
     "dialect": "postgres",
     logging: false
   },
