@@ -23,7 +23,7 @@ async function downloadFile(url, fileName = null) {
   try {
     const finished = promisify(stream.finished);
     fileName = fileName || `${uuidv4()}.${extension}`;
-    const writer = fs.createWriteStream(path.join(__dirname, `../../tmp/${fileName}`));
+    const writer = fs.createWriteStream(`/tmp/${fileName}`);
 
     const res = await axios({
       method: 'get',

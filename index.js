@@ -38,7 +38,7 @@ function createTmpFolder() {
 
 function start() {
   const app = initApp();
-  createTmpFolder();
+  // createTmpFolder();
 
   if (ENVIRONMENT !== "lambda") {
     app.listen(PORT, () => {
