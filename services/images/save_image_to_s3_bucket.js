@@ -33,6 +33,14 @@ async function saveImageToS3Bucket(fileName) {
     return `https://${AWS_S3_BUCKET}.s3.amazonaws.com/${fileName}`;
   } catch (error) {
     console.log(error);
+    console.log("AWS_S3_BUCKET");
+    console.log(AWS_S3_BUCKET);
+    console.log("AWS_ACCESS_KEY");
+    console.log(AWS_ACCESS_KEY);
+    console.log("AWS_SECRET_ACCESS_KEY");
+    console.log(AWS_SECRET_ACCESS_KEY);
+    console.log("AWS_REGION");
+    console.log(AWS_REGION);
     throwApiError(400, "Failed to upload image to S3");
   }
 }
